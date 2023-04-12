@@ -14,17 +14,21 @@ namespace ToDoListAdolfson.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().HasData(
-                new Category { CategoryId = "work", Name = "Work" },
-                new Category { CategoryId = "home", Name = "Home" },
-                new Category { CategoryId = "ex", Name = "Exercise" },
-                new Category { CategoryId = "shop", Name = "Shopping" },
-                new Category { CategoryId = "call", Name = "Contact" }
-            );
-            modelBuilder.Entity<Status>().HasData(
-                new Status { StatusId = "open", Name = "Open" },
-                new Status { StatusId = "closed", Name = "Completed" }
-            );
+            //modelBuilder.Entity<Category>().HasData(
+            //    new Category { CategoryId = "work", Name = "Work" },
+            //    new Category { CategoryId = "home", Name = "Home" },
+            //    new Category { CategoryId = "ex", Name = "Exercise" },
+            //    new Category { CategoryId = "shop", Name = "Shopping" },
+            //    new Category { CategoryId = "call", Name = "Contact" }
+            //);
+            //modelBuilder.Entity<Status>().HasData(
+            //    new Status { StatusId = "open", Name = "Open" },
+            //    new Status { StatusId = "closed", Name = "Completed" }
+            //);
+
+            modelBuilder.ApplyConfiguration(new ConfigureCategory());
+            modelBuilder.ApplyConfiguration(new ConfigureStatus());
+
         }
 
     }
